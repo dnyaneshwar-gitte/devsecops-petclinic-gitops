@@ -4,6 +4,8 @@ metadata:
   name: petclinic-image-updater
   namespace: argocd
 spec:
+  commonUpdateSettings:
+    pullSecret: argocd/ecr-secret
   applicationRefs:
     - namePattern: petclinic-app
       useAnnotations: true
