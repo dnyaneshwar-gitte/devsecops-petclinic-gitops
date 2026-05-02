@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: devsecops-petclinic-service
   namespace: petclinic-dev
+  labels:
+    app: devsecops-petclinic
 spec:
   type: ClusterIP
   selector:
     app: devsecops-petclinic
   ports:
-    - port: 8080
+    - name: http
+      port: 8080
       targetPort: 8080
